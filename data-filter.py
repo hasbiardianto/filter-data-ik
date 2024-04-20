@@ -9,7 +9,7 @@ st.title('Filter Data Indeks Kasus TBC')
 
 
 st.header('Upload Data Baru')
-data = st.file_uploader('Upload file Excel data indeks kasus yang belum difilter')
+data = st.file_uploader('Upload file Excel data indeks kasus yang ingin difilter')
 
 if data:
     on = st.toggle('Lihat Detail', key='ondata')
