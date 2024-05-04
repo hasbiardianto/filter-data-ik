@@ -57,7 +57,7 @@ if filter and data :
             time.sleep(1)
             date = time.gmtime()
             with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
-                df_filtered_data.to_excel(writer, sheet_name='Sheet1', index=False)
+                df_filtered_data.to_excel(writer, sheet_name='Sheet1', index=True)
 
             msg.toast('Data selesai dibuat')
             time.sleep(1)
@@ -65,6 +65,6 @@ if filter and data :
             download = st.download_button(
                 label="Download data excel",
                 data=buffer,
-                file_name='data_ik_terfilter-{}{}{}.xlsx'.format(date.tm_mday, date.tm_mon, date.tm_year),
+                file_name='data_ik_terfilter-{}_{}_{}.xlsx'.format(date.tm_mday, date.tm_mon, date.tm_year),
                 mime='application/vnd.ms-excel'
             )
