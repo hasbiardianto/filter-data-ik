@@ -25,7 +25,7 @@ filter = st.file_uploader('Upload file Excel data indeks kasus yang sudah diinve
 
 if filter:
     on = st.toggle('Lihat Detail', key='onfilter')
-    df_filter = pd.read_excel(filter, header=3)
+    df_filter = pd.read_excel(filter, header=0)
     if on:
         st.dataframe(df_filter)
 
